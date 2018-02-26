@@ -26,11 +26,7 @@ MyClass::MyClass(int _size) :comparisons(0)
 	}
 }
 
-
-
-
-MyClass::MyClass(const MyClass &object_1, const MyClass &object_2)
-{
+MyClass::MyClass(const MyClass &object_1, const MyClass &object_2){
 
 	if (object_1.size_of_array > object_2.size_of_array)
 		this->size_of_array = object_1.size_of_array;
