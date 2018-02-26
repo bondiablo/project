@@ -19,8 +19,7 @@ MyClass::MyClass(int _size) :comparisons(0)
 	size_of_array = _size;
 	if (_size == 1) {
 		mas = new int;
-	}
-	else
+	}else
 	{
 		mas = new int[_size];
 	}
