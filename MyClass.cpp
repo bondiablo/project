@@ -7,16 +7,12 @@
 
 using namespace std;
 
-
-
 inline int Rand() {
 
 	int num = -1000 + rand() % 2000;
 	return num;
 
 }
-
-
 
 MyClass::MyClass(int _size) :comparisons(0)
 {
@@ -67,7 +63,7 @@ MyClass::MyClass(const MyClass&object)
 
 
 
-//Äåñòðóêòîð
+//Ã„Ã¥Ã±Ã²Ã°Ã³ÃªÃ²Ã®Ã°
 MyClass::~MyClass()
 {
 	if (size_of_array == 1) {
@@ -81,7 +77,7 @@ MyClass::~MyClass()
 
 
 
-//Ëåãåíäà
+//Ã‹Ã¥Ã£Ã¥Ã­Ã¤Ã 
 void MyClass::Set_comparisons()
 {
 	int count = 0;
@@ -109,7 +105,7 @@ istream & operator >> (istream &stream, MyClass& object)
 	if (object.size_of_array < 10) {
 		for (int i = 0; i < object.size_of_array; i++)
 		{
-			cout << "Ââåäèòå ýåìåíò #" << i + 1 << " ==>";
+			cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã½Ã¥Ã¬Ã¥Ã­Ã² #" << i + 1 << " ==>";
 			Check_input(object.mas[i]);
 
 		}
@@ -118,7 +114,7 @@ istream & operator >> (istream &stream, MyClass& object)
 
 	else {
 
-		cout << "Âûïîëíûåòñÿ àâòîìàòè÷åñêîå çàïîëíåíèå ìàññèâà==>\n";
+		cout << "Ã‚Ã»Ã¯Ã®Ã«Ã­Ã»Ã¥Ã²Ã±Ã¿ Ã Ã¢Ã²Ã®Ã¬Ã Ã²Ã¨Ã·Ã¥Ã±ÃªÃ®Ã¥ Ã§Ã Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¥ Ã¬Ã Ã±Ã±Ã¨Ã¢Ã ==>\n";
 		for (int i = 0; i < object.size_of_array; i++)
 		{
 
@@ -174,7 +170,7 @@ bool MyClass::operator>(MyClass &object)
 		}
 		else
 		{
-			//ïðîâåðêà íà äëèíó ìàññèâà
+			//Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ  Ã­Ã  Ã¤Ã«Ã¨Ã­Ã³ Ã¬Ã Ã±Ã±Ã¨Ã¢Ã 
 			if (this->size_of_array > object.size_of_array) {
 				return true;
 			}
@@ -201,7 +197,7 @@ bool MyClass::operator< (MyClass & object)
 		}
 		else
 		{
-			//ïðîâåðêà íà äëèíó ìàññèâà
+			//Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ  Ã­Ã  Ã¤Ã«Ã¨Ã­Ã³ Ã¬Ã Ã±Ã±Ã¨Ã¢Ã 
 			if (this->size_of_array < object.size_of_array) {
 				return true;
 			}
@@ -223,7 +219,7 @@ MyClass operator+(MyClass&object, int num)
 	{
 		check = 1.0*object.mas[i] + num;
 		if (check > INT_MAX || check < INT_MIN) {
-			throw "Ïåðåïîëíåíèå ïðè âû÷èñëåíèè ñóììû!";
+			throw "ÃÃ¥Ã°Ã¥Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¥ Ã¯Ã°Ã¨ Ã¢Ã»Ã·Ã¨Ã±Ã«Ã¥Ã­Ã¨Ã¨ Ã±Ã³Ã¬Ã¬Ã»!";
 		}
 		else
 		{
@@ -248,7 +244,7 @@ MyClass operator*(const MyClass&object_1, const MyClass& object_2)
 
 		if (check > INT_MAX || check < INT_MIN)
 		{
-			throw "Ïåðåïîëíåíèå ïðè âû÷èñëåíèè óìíîæåíèÿ!";
+			throw "ÃÃ¥Ã°Ã¥Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¥ Ã¯Ã°Ã¨ Ã¢Ã»Ã·Ã¨Ã±Ã«Ã¥Ã­Ã¨Ã¨ Ã³Ã¬Ã­Ã®Ã¦Ã¥Ã­Ã¨Ã¿!";
 		}
 		else
 		{
@@ -271,11 +267,11 @@ MyClass operator/(const MyClass&object_1, const MyClass& object_2) {
 		if (w == object_2.size_of_array)
 			w = 0;
 		if (object_2.mas[w] == 0)
-			throw "Îøèáêà äåëåíèÿ íà íîëü!";
+			throw "ÃŽÃ¸Ã¨Ã¡ÃªÃ  Ã¤Ã¥Ã«Ã¥Ã­Ã¨Ã¿ Ã­Ã  Ã­Ã®Ã«Ã¼!";
 		check = 1.0*object_1.mas[q] / object_2.mas[w];
 		if (check > INT_MAX || check < INT_MIN)
 		{
-			throw "Ïåðåïîëíåíèå ïðè âû÷èñëåíèè äåëåíèÿ!";
+			throw "ÃÃ¥Ã°Ã¥Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¥ Ã¯Ã°Ã¨ Ã¢Ã»Ã·Ã¨Ã±Ã«Ã¥Ã­Ã¨Ã¨ Ã¤Ã¥Ã«Ã¥Ã­Ã¨Ã¿!";
 		}
 		else new_mas.mas[i] = object_1.mas[q] / object_2.mas[w];
 
